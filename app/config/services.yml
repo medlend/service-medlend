@@ -6,11 +6,16 @@ parameters:
 services:
     med.serv:
         class: AppBundle\Services\MedService
-    med_listener2:
-        class: AppBundle\EventListener\TestLendListener
+    med_listener1:
+        class: AppBundle\EventListener\TestLendSubcriber
         arguments: ["@med.serv"]
         tags:
-            - { name: kernel.event_listener, event: med.lend, method: lendol}
+            - { name: kernel.event_subscriber}
+#    med_listener2:
+#        class: AppBundle\EventListener\TestLendListener
+#        arguments: ["@med.serv"]
+#        tags:
+#            - { name: kernel.event_listener, event: med.lend, method: lendol}
 #    med_listener:
 #        class: AppBundle\EventListener\TestListener
 #        tags:

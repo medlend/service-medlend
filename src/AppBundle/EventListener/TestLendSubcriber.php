@@ -2,19 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: root
- * Date: 19/09/16
- * Time: 10:53
+ * Date: 21/09/16
+ * Time: 16:17
  */
+
 namespace AppBundle\EventListener;
-
-
-use AppBundle\Services\MedService;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use AppBundle\Event\LendEvent;
+use AppBundle\Services\MedService;
 
-
-class TestLendListener
+class TestLendSubcriber implements EventSubscriberInterface
 {
     private $medService;
     /**
@@ -26,6 +23,11 @@ class TestLendListener
         $this->medService = $medService;
     }
 
+    public static function getSubscribedEvents()
+    {
+          return array( LendEvent::NAME  => 'lendol', );
+    }
+
     public function lendol(LendEvent $event)
     {
         $this->medService->isseerv();
@@ -34,6 +36,4 @@ class TestLendListener
 
 
     }
-
-
 }
