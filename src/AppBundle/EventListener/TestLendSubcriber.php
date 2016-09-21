@@ -31,9 +31,10 @@ class TestLendSubcriber implements EventSubscriberInterface
     public function lendol(LendEvent $event)
     {
         $this->medService->isseerv();
+        echo '</br>';
         var_dump($event->getTexte());
-        die();
-
+       // die();
+        echo '</br>';
 
     }
 }

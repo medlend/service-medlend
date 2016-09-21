@@ -12,7 +12,7 @@ class MedService  {
 
 public function isseerv(){
 
-    die("Test serviceeeeeeeeeeeee");
+    echo "Test serviceeeeeeeeeeeee" ;
 }
 
 }
