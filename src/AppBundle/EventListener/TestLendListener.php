@@ -31,7 +31,7 @@ class TestLendListener
         $this->medService->isseerv();
         var_dump($event->getTexte());
         die();
-        // Customize your response object to display the exception details  Event\LendEvent $event
+       
 
     }
 
